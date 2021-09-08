@@ -1,2 +1,2 @@
 # testrepo
-for testing purposesasasasasa
+for testing purpose
