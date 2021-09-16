@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Image Slideshow</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+div {
+	background-size: auto;
+	background-position: center;
+	width: 500px;
+	height: 500px;
+	overflow: hidden;
+}
+
+</style>
+<script lang="javascript">
+
+var arr = new Array("img.jpg","img2.jpg","img3.jpg","img4.jpg");
+
+$(document).ready(function(){
+
+var i = 0;
+$("#show").css("background-image", "url(" + arr[i] + ")");
+setInterval(function () {
+	i++;
+        if (i == arr.length) {
+	        i = 0;
+        }
+        $("#show").fadeOut("slow", function () {
+            $(this).css("background-image", "url(" + arr[i] + ")");
+            $(this).fadeIn("slow");
+        });
+}, 500);
+});
+
+
+</script>
+</head>
+<body>
+<br />
+<div id="show"></div>
+</body>
+</html>
